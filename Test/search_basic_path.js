@@ -48,13 +48,16 @@ const search = (path) => {
             }
         }
     }
+    
 
     findBasicPaths(entryNode, [], {});
-
+    
     console.log(`Các đường dẫn cơ sở trong đồ thị của file ${path} :`);
     basicPaths.forEach((path, index) => {
+        
         console.log(`Path ${index + 1}: `, path);
     });
+    return basicPaths;
 }
 // search('giai_pt_bac_nhat.dot');
 module.exports = search;
