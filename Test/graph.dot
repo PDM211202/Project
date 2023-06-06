@@ -1,8 +1,0 @@
-n0 [label="entry", style="rounded"]
-n1 [label="VariableDeclaration"]
-n2 [label="ReturnStatement"]
-n3 [label="exit", style="rounded"]
-n0 -> n1 []
-n1 -> n2 []
-n1 -> n3 [color="red", label="exception"]
-n2 -> n3 []
