@@ -1,19 +1,7 @@
 const esprima = require('esprima');
 const esgraph = require('esgraph');
 const { kiem_tra_snt, giai_pt_bac_nhat } = require('../index');
-const dot = require('dot/index');
 const fs = require('fs');
-
-// function generateDotCode(code, outputFile) {
-//     const ast = esprima.parseScript(code);
-//     const cfg = esgraph(ast.body[0].body);
-
-//     const dotCode = esgraph.dot(cfg, { counter: 0, exceptions: false });
-
-//     fs.writeFileSync(outputFile, `digraph {
-//         ${dotCode}
-//     }`);
-// }
 
 function generateDotCode(code, outputFile) {
     const ast = esprima.parseScript(code);
