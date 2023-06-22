@@ -26,13 +26,29 @@ const checkPath = (fileGraph, func, input_1, input_2, input_3) => {
     return p;
 }
 
-let data1 = [40,50,60,80,90,100,110,120,130,140,150,160,170,180,190,200,250,300,400]
+function createRandomMatrix(rows, columns, minValue, maxValue) {
+    const matrix = [];
+    for (let i = 0; i < rows; i++) {
+        const row = [];
+        for (let j = 0; j < columns; j++) {
+            const randomNumber = Math.floor(Math.random() * (maxValue - minValue + 1)) + minValue;
+            row.push(randomNumber);
+        }
+        matrix.push(row);
+    }
+    return matrix;
+}
 
-// let d = checkPath('tinhTienDien.dot', tinhTienDien, 30)
+// Sử dụng hàm để tạo một mảng hai chiều 3x3 với giá trị ngẫu nhiên từ 1 đến 10
+const data1 = createRandomMatrix(2, 100, 1, 400);
+
+
+let d = checkPath('tinhTienDien.dot', tinhTienDien, 30)
 const xuly = (data1) => {
     data1.forEach((item) => {
         let d = checkPath('tinhTienDien.dot', tinhTienDien, item)
-        console.log(d);
+        console.log(item + ': ', d);
     })
 }
-xuly(data1)
+
+xuly(data1[0])
