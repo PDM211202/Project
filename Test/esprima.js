@@ -10,12 +10,6 @@ const getArray = (func, data, input_1, input_2, input_3, input_4) => {
         let i = 0;
         estraverse.traverse(ast, {
             enter: function (node) {
-                // console.log(node);
-                // if (node.type === 'FunctionDeclaration') {
-                //     const markingStatement = esprima.parseScript(`arrayPath.push("${data[i]}")`).body[0];
-                //     i++;
-                //     node.body.body.unshift(markingStatement);
-                // }
                 if (node.type === 'IfStatement') {
                     const markingStatement = esprima.parseScript(`arrayPath.push("${data[i]}")`).body[0];
                     i++;
@@ -44,7 +38,7 @@ const getArray = (func, data, input_1, input_2, input_3, input_4) => {
     }
 
     let test = arr(func, data);
-    test(input_1, input_2, input_3, input_4)
+    test(input_1, input_2, input_3, input_4);
     return arrayPath;
 }
 module.exports = getArray;

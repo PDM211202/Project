@@ -48,7 +48,6 @@ const search = (path) => {
             }
         }
     }
-    
 
     findBasicPaths(entryNode, [], {});
     
@@ -59,5 +58,5 @@ const search = (path) => {
     // });
     return basicPaths;
 }
-// search('giai_pt_bac_nhat.dot');
+
 module.exports = search;
