@@ -1,7 +1,7 @@
 const generateDotCode = require('./test/create_graph');
 const search = require('./search_basic_path');
 const { kiem_tra_snt, giai_pt_bac_nhat, tinhTienDien } = require('./index');
-const getArray = require("./esprima");
+const getArray = require("./mark");
 const searchNode = require("./search_node");
 
 // generateDotCode(kiem_tra_snt.toString(), 'graphviz/kiem_tra_snt.dot');
@@ -12,7 +12,6 @@ const searchNode = require("./search_node");
 // search('giai_pt_bac_nhat.dot');
 
 const checkPath = (fileGraph, func, input_1, input_2, input_3) => {
-    const dataPath = {};
     let path = search(fileGraph);
     const data = searchNode(fileGraph);
     const get = getArray(func, data, input_1, input_2, input_3);
@@ -45,4 +44,3 @@ const xuly = (data, fileGraph, func) => {
     return output;
 }
 module.exports = xuly;
-

@@ -1,15 +1,16 @@
-const { kiem_tra_snt, giai_pt_bac_nhat } = require('./index');
+const { tinhTienDien } = require('./index');
 const xuly = require('./test');
 const createRandomMatrix = require('./create_data');
 const search = require('./search_basic_path');
+const fs = require('fs');
 
-const data1 = createRandomMatrix(2, 100, 0, 10);
-const output = xuly(data1, 'giai_pt_bac_nhat.dot', giai_pt_bac_nhat);
-
-const search_input = (fileGraph) => {
+const search_input = (fileGraph, func, row, column, start, end) => {
+    const data1 = createRandomMatrix(row, column, start, end);
+    const output = xuly(data1, fileGraph, func);
     const path = search(fileGraph);
-    const object = {};
+    const result = [];
     path.forEach((item) => {
+        const object = {};
         let arr = [];
         output.forEach((input) => {
             if (input.includes(item)) {
@@ -19,11 +20,26 @@ const search_input = (fileGraph) => {
                 arr.push(stringBeforeColon);
             }
         })
-        let obj = {key: item, value: arr}
-        const {key, value} = obj;
+        let obj = { key: item, value: arr }
+        const { key, value } = obj;
         object[key] = value;
+        result.push(object);
     })
-    console.log(object);
+    // console.log(result);
+    const outputFile = 'result.json';
+    exportResultToFile(result, outputFile);
+    return result;
 }
 
-search_input('giai_pt_bac_nhat.dot')
+function exportResultToFile(result, outputFile) {
+    const jsonData = JSON.stringify(result, null, 2);
+    fs.writeFile(outputFile, jsonData, (err) => {
+        if (err) {
+            console.error('Có lỗi khi xuất kết quả ra tệp tin:', err);
+        } else {
+            console.log('Kết quả đã được xuất ra tệp tin thành công:', outputFile);
+        }
+    });
+}
+
+// search_input('tinhTienDien.dot', tinhTienDien, 1, 100, 1, 300)

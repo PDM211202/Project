@@ -1,7 +1,6 @@
 const esprima = require('esprima');
 const estraverse = require('estraverse');
 const escodegen = require('escodegen');
-const { kiem_tra_snt, giai_pt_bac_nhat } = require('./index');
 
 const getArray = (func, data, input_1, input_2, input_3, input_4) => {
     let arrayPath = [];

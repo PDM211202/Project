@@ -1,5 +1,5 @@
 digraph {
-        n0 [label="entry", style="rounded"]
+n0 [label="entry", style="rounded"]
 n1 [label="VariableDeclaration"]
 n2 [label="BinaryExpression"]
 n3 [label="AssignmentExpression"]
