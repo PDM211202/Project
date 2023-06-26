@@ -1,8 +1,18 @@
-const { kiem_tra_snt, giai_pt_bac_nhat } = require('./index');
-const xuly = require('./test');
-const createRandomMatrix = require('./create_data');
-const search = require('./search_basic_path');
+const { kiem_tra_snt, giai_pt_bac_nhat, tinhTienDien } = require('./index');
+const search_input = require('./search_input');
+const generateDotCode = require('./test/create_graph');
 
-const data1 = createRandomMatrix(2, 1000, 0, 400);
-const output = xuly(data1, 'giai_pt_bac_nhat.dot', giai_pt_bac_nhat);
+//tên file graph
+const fileGraph = 'tinhTienDien.dot';
+// tên chương trình
+const func = tinhTienDien;
+// số đầu vào
+const sl = 1;
+// số lượng đầu vào
+const spt = 100;
+// tạo giá trị trong khoảng
+const start = 1;
+const end = 300;
 
+generateDotCode(func.toString(), `graphviz/${fileGraph}`);
+search_input(fileGraph, func, sl, spt, start, end);

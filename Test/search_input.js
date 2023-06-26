@@ -1,4 +1,3 @@
-const { tinhTienDien } = require('./index');
 const xuly = require('./test');
 const createRandomMatrix = require('./create_data');
 const search = require('./search_basic_path');
@@ -43,3 +42,4 @@ function exportResultToFile(result, outputFile) {
 }
 
 // search_input('tinhTienDien.dot', tinhTienDien, 1, 100, 1, 300)
+module.exports = search_input;

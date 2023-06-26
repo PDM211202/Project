@@ -41,9 +41,3 @@ const getArray = (func, data, input_1, input_2, input_3, input_4) => {
     return arrayPath;
 }
 module.exports = getArray;
-// const test = markedCode.toString();
-// const giai_pt_bac = eval(`(${test})`);
-
-// // Sử dụng hàm đã chuyển đổi
-// const result = giai_pt_bac(2, 3);
-// console.log(result);
