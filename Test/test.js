@@ -1,6 +1,6 @@
 const generateDotCode = require('./test/create_graph');
 const search = require('./search_basic_path');
-const { kiem_tra_snt, giai_pt_bac_nhat, tinhTienDien } = require('./index');
+const { kiem_tra_snt, giai_pt_bac_nhat, tinhTienDien, checkNumber } = require('./index');
 const getArray = require("./mark");
 const searchNode = require("./search_node");
 
@@ -25,7 +25,9 @@ const checkPath = (fileGraph, func, input_1, input_2, input_3) => {
     return p;
 }
 
-// let d = checkPath('tinhTienDien.dot', tinhTienDien, 30)
+// let d = checkPath('checkNumber.dot', checkNumber, 30)
+// console.log(d);
+
 const xuly = (data, fileGraph, func) => {
     let output = [];
     if (data[0] !== undefined && data[1] === undefined) {

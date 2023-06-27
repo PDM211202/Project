@@ -50,30 +50,4 @@ function tinhTienDien(soKwhTieuThu) {
     return tienDien;
 }
 
-function demoCylomatic(x, y) {
-    x = 1, y = 4;
-    if (i < 10) {
-        if (j < 10) {
-            //Block 2
-            x = 4;
-            y = 2;
-        } else if (j > 5) {
-            //Block 3
-            x = 3;
-            y = 4;
-        } else {
-            while (i < 10) {
-                //Block 4
-                x = x + 1;
-                y = y + 1;
-                i = i + 1;
-            }
-        }
-    } else {
-        //Block 5
-        x = 6;
-        y = 10;
-    }
-}
-
-module.exports = { kiem_tra_snt, giai_pt_bac_nhat, tinhTienDien, demoCylomatic }
+module.exports = { kiem_tra_snt, giai_pt_bac_nhat, tinhTienDien }

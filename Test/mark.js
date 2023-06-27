@@ -40,4 +40,5 @@ const getArray = (func, data, input_1, input_2, input_3, input_4) => {
     test(input_1, input_2, input_3, input_4);
     return arrayPath;
 }
+
 module.exports = getArray;

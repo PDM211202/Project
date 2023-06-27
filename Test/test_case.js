@@ -2,16 +2,19 @@ const assert = require('assert');
 const { tinhTienDien } = require('./index');
 const inputData = require('./result.json');
 
-const expected = [3000, 40500, 28500];
+const expected = [70500, 9000, 60000, 145000, 77000, 149000];
+const func = tinhTienDien;
 
 describe('Test getStringBeforeColon', function () {
+  let index = 0;
   inputData.forEach((item) => {
     it(`${Object.keys(item)}`, function () {
       const values = Object.values(item);
       const value = values[0];
       for (let i = 0; i < 3; i++) {
-          const result = tinhTienDien(value[i]);
-          assert.strictEqual(result, expected[i]);
+        const result = func(value[i]);
+        assert.strictEqual(result, expected[index]);
+        index++;
       }
     });
   })

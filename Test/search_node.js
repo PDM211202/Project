@@ -30,8 +30,8 @@ const searchNode = (path) => {
             result.push(w[i]);
         }
     }
-
+    // console.log(result);
     return result;
 }
-// searchNode('tinhTienDien.dot');
+searchNode('checkNumber.dot');
 module.exports = searchNode;
