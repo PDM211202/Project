@@ -2,7 +2,7 @@ const assert = require('assert');
 const { tinhTienDien } = require('./index');
 const inputData = require('./result.json');
 
-const expected = [70500, 9000, 60000, 145000, 77000, 149000];
+const expected = [70500, 9000, 60000, 145000, 77000, 149000, 257500, 325000, 390000, 659000, 626000, 569000];
 const func = tinhTienDien;
 
 describe('Test getStringBeforeColon', function () {
