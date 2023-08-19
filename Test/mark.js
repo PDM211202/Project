@@ -13,7 +13,7 @@ const getArray = (func, data, input_1, input_2, input_3, input_4) => {
                     const markingStatement = esprima.parseScript(`arrayPath.push("${data[i]}")`).body[0];
                     i++;
                     node.consequent.body.unshift(markingStatement);
-                }
+                } 
                 // if (node.type === 'ForStatement') {
                 //     const markingStatement = esprima.parseScript('console.log("Marked inside for");').body[0];
                 //     node.body.body.unshift(markingStatement);

@@ -8,6 +8,7 @@ function kiem_tra_snt(n) {
     }
     else if (n % 2 == 0) {
         flag = false;
+        tinhTienDien(n);
     }
     else {
         for (var i = 3; i <= Math.sqrt(n); i += 2) {

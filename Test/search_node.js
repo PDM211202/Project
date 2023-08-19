@@ -10,6 +10,7 @@ const searchNode = (path) => {
 
     // Parse đồ thị từ nội dung DOT
     const dotGraph = dot.read(dotSource);
+    console.log(dotGraph);
 
     let v = [];
     let w = [];
@@ -24,13 +25,14 @@ const searchNode = (path) => {
             })
         }
     })
+    console.log(objectList);
     const result = [];
     for (let i = 0; i < w.length; i++) {
         if (!v.includes(w[i])) {
             result.push(w[i]);
         }
     }
-    // console.log(result);
+    console.log(result);
     return result;
 }
 searchNode('checkNumber.dot');

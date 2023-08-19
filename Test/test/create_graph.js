@@ -1,6 +1,7 @@
 const esprima = require('esprima');
 const esgraph = require('esgraph');
 const fs = require('fs');
+const { kiem_tra_snt } = require('../index');
 
 function generateDotCode(code, outputFile) {
     const ast = esprima.parseScript(code);
@@ -18,6 +19,6 @@ function generateDotCode(code, outputFile) {
     }`);
 }
 
-// generateDotCode(kiem_tra_snt.toString(), 'graphviz/kiem_tra_snt.dot');
+generateDotCode(kiem_tra_snt.toString(), 'graphviz/kiem_tra_snt.dot');
 
 module.exports = generateDotCode;

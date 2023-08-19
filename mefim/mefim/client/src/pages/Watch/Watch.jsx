@@ -35,7 +35,7 @@ export default function Watch({ match }) {
     }
 
     const watchUrl = episodes(filmInfo.episodes[0]);
-console.log(filmInfo.episodes);
+// console.log(filmInfo.episodes);
     return (
         <div className='container-info pd-80'>
             <div className="des d-flex justify-content-start ">
